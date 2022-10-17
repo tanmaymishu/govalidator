@@ -88,7 +88,7 @@ func (v *Validator) Validate() url.Values {
 			continue
 		}
 		for _, rule := range rules {
-			if !isRuleExist(rule) {
+			if !IsRuleExist(rule) {
 				panic(fmt.Errorf("govalidator: %s is not a valid rule", rule))
 			}
 			msg := v.getCustomMessage(field, rule)
@@ -196,7 +196,7 @@ func (v *Validator) internalValidateStruct() url.Values {
 		}
 		value, _ := r.getFlatVal(field)
 		for _, rule := range rules {
-			if !isRuleExist(rule) {
+			if !IsRuleExist(rule) {
 				panic(fmt.Errorf("govalidator: %s is not a valid rule", rule))
 			}
 			msg := v.getCustomMessage(field, rule)
