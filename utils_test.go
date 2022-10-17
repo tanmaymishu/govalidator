@@ -22,14 +22,14 @@ func Benchmark_isContainRequiredField(b *testing.B) {
 	}
 }
 
-func Test_isRuleExist(t *testing.T) {
-	if !isRuleExist("required") {
-		t.Error("isRuleExist failed for valid rule")
+func Test_IsRuleExist(t *testing.T) {
+	if !IsRuleExist("required") {
+		t.Error("IsRuleExist failed for valid rule")
 	}
-	if isRuleExist("not exist") {
-		t.Error("isRuleExist failed for invalid rule")
+	if IsRuleExist("not exist") {
+		t.Error("IsRuleExist failed for invalid rule")
 	}
-	if !isRuleExist("mime") {
+	if !IsRuleExist("mime") {
 		t.Error("extended rules failed")
 	}
 }
