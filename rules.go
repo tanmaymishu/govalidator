@@ -25,6 +25,13 @@ func AddCustomRule(name string, fn func(field string, rule string, message strin
 	rulesFuncMap[name] = fn
 }
 
+// RemoveCustomRule removes an existing rule
+func RemoveCustomRule(name string) {
+	if IsRuleExist(name) {
+		delete(rulesFuncMap, name)
+	}
+}
+
 // validateCustomRules validate custom rules
 func validateCustomRules(field string, rule string, message string, value interface{}, errsBag url.Values) {
 	for k, v := range rulesFuncMap {
