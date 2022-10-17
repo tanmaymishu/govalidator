@@ -16,8 +16,8 @@ func isContainRequiredField(rules []string) bool {
 	return false
 }
 
-// isRuleExist check if the provided rule name is exist or not
-func isRuleExist(rule string) bool {
+// IsRuleExist check if the provided rule name is exist or not
+func IsRuleExist(rule string) bool {
 	if strings.Contains(rule, ":") {
 		rule = strings.Split(rule, ":")[0]
 	}
