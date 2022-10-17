@@ -2191,3 +2191,10 @@ func Test_NotIn_string_valid(t *testing.T) {
 		t.Error("not_in validation was triggered when valid!")
 	}
 }
+
+func Test_RemoveCustomRule(t *testing.T) {
+	RemoveCustomRule("__x__")
+	if _, ok := rulesFuncMap["__x__"]; ok {
+		t.Error("RemoveCustomRule failed to remove an existing rule")
+	}
+}
